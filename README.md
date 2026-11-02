@@ -77,8 +77,8 @@ Aplikasi menggunakan database MySQL dengan nama `kedai_senja` dan tabel `menu` u
 
 ## Identitas
 
-- Nama: [Nama Lengkap]
-- NIM: [NIM]
+- Nama: Rahmat Zaki Setiawan
+- NIM: 42530030
 - Mata Kuliah: Pemrograman Web
 - Proyek: Kedai Senja
 
@@ -88,5 +88,5 @@ Link YouTube: [Masukkan URL Video YouTube]
 
 ## Repository
 
-Link GitHub: [Masukkan URL Repository GitHub]
+Link GitHub: (https://github.com/rahmatsetiawan2006-ai/pemweb-tugas3-42530030.git)
 "# pemweb-tugas3-42530030" 
