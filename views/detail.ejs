@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        <%= judul %>
+    </title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <%- include('partials/header') %>
+
+        <main class="detail-container">
+
+            <h1>Detail Menu</h1>
+
+            <div class="detail-card">
+
+                <img src="<%= menu.foto %>" alt="<%= menu.nama %>">
+
+                <h2>
+                    <%= menu.nama %>
+                </h2>
+
+                <p>Kategori: <%= menu.kategori %>
+                </p>
+
+                <h3>
+                    Rp <%= menu.harga.toLocaleString('id-ID') %>
+                </h3>
+
+                <p>
+                    <%= menu.deskripsi %>
+                </p>
+
+                <a href="/">Kembali ke Daftar Menu</a>
+
+            </div>
+
+        </main>
+
+        <%- include('partials/footer') %>
+
+</body>
+
+</html>

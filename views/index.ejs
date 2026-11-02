@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        <%= judul %>
+    </title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/image/logo.png">
+</head>
+
+<body>
+
+    <%- include('partials/header') %>
+
+        <main>
+            <h1>Daftar Menu Kedai Senja</h1>
+
+            <p>Silakan pilih makanan atau minuman favorit Anda.</p>
+
+            <div class="filter">
+                <a href="/">Semua Menu</a>
+                <a href="/?kategori=makanan">Makanan</a>
+                <a href="/?kategori=minuman">Minuman</a>
+            </div>
+
+            <div class="menu-container">
+
+                <% if (menu.length===0) { %>
+                    <p>Menu tidak ditemukan.</p>
+                    <% } %>
+
+                        <% menu.forEach(item=> { %>
+
+                            <div class="menu-card">
+
+                                <img src="<%= item.foto %>" alt="<%= item.nama %>">
+
+                                <h3>
+                                    <%= item.nama %>
+                                </h3>
+
+                                <p>Rp <%= item.harga.toLocaleString('id-ID') %>
+                                </p>
+
+
+                            <a href="/menu/<%= item.id %>">
+                                Lihat Detail
+                            </a>
+
+                            <form action="/menu/<%= item.id %>/hapus" method="POST"
+                                onsubmit="return confirm('Yakin ingin menghapus menu ini?')">
+
+                                <button type="submit" class="btn-hapus">
+                                        Hapus
+                                    </button>
+                            
+                            <a href="/menu/<%= item.id %>/edit" class="btn-edit">
+                                Edit
+                            </a>
+                            </form>
+
+                            </div>
+
+                            <% }) %>
+
+            </div>
+            <a href="/menu/tambah" class="btn-kembali">
+                + Tambah Menu
+            </a>
+
+<!-- Pagination -->
+<% if (totalHalaman > 1) { %>
+    <div class="pagination">
+
+        <% if (halaman > 1) { %>
+            <a href="/?page=<%= halaman - 1 %><%= kategori ? '&kategori=' + kategori : '' %>">
+                &laquo; Sebelumnya
+            </a>
+        <% } %>
+
+        <span>
+            Halaman <%= halaman %> dari <%= totalHalaman %>
+        </span>
+
+        <% if (halaman < totalHalaman) { %>
+            <a href="/?page=<%= halaman + 1 %><%= kategori ? '&kategori=' + kategori : '' %>">
+                Berikutnya &raquo;
+            </a>
+        <% } %>
+
+    </div>
+<% } %>
+
+        </main>
+
+        <%- include('partials/footer') %>
+
+</body>
+
+</html>

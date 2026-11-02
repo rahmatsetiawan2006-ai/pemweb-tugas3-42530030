@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= judul %>
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <main>
+        <h1>Edit Menu Kedai Senja</h1>
+
+        <form action="/menu/<%= menu.id %>/edit" method="POST" class="form-menu">
+
+            <label>Nama Menu</label>
+            <input type="text" name="nama" value="<%= menu.nama %>" required>
+
+            <label>Kategori</label>
+            <select name="kategori" required>
+                <option value="makanan" <%=menu.kategori==='makanan' ? 'selected' : '' %>>
+                    Makanan
+                </option>
+
+                <option value="minuman" <%=menu.kategori==='minuman' ? 'selected' : '' %>>
+                    Minuman
+                </option>
+            </select>
+
+            <label>Harga</label>
+            <input type="number" name="harga" value="<%= menu.harga %>" min="1" required>
+
+            <label>Deskripsi</label>
+            <textarea name="deskripsi"><%= menu.deskripsi || '' %></textarea>
+
+            <label>URL Foto</label>
+            <input type="text" name="foto" value="<%= menu.foto || '' %>">
+
+            <button type="submit">Simpan Perubahan</button>
+
+            <a href="/" class="btn-kembali">Batal</a>
+        </form>
+    </main>
+
+</body>
+
+</html>

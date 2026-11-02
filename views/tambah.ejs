@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        <%= judul %>
+    </title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/image/logo.png">
+</head>
+
+<body>
+
+    <%- include('partials/header') %>
+
+        <main>
+            <h1>Tambah Menu Baru</h1>
+            <p>Masukkan informasi menu Kedai Senja.</p>
+
+            <form action="/menu/tambah" method="POST" class="form-menu">
+
+                <label for="nama">Nama Menu</label>
+                <input type="text" id="nama" name="nama" placeholder="Contoh: Kopi Susu Senja" required>
+
+                <label for="kategori">Kategori</label>
+                <select id="kategori" name="kategori" required>
+                    <option value="">-- Pilih Kategori --</option>
+                    <option value="makanan">Makanan</option>
+                    <option value="minuman">Minuman</option>
+                </select>
+
+                <label for="harga">Harga</label>
+                <input type="number" id="harga" name="harga" placeholder="Contoh: 18000" min="1" required>
+
+                <label for="deskripsi">Deskripsi</label>
+                <textarea id="deskripsi" name="deskripsi" placeholder="Deskripsikan menu..."></textarea>
+
+                <label for="foto">URL Foto</label>
+                <input type="text" id="foto" name="foto" placeholder="/image/kopi-susu.jpg">
+
+                <button type="submit">Simpan Menu</button>
+
+                <a href="/" class="btn-kembali">Kembali</a>
+
+            </form>
+        </main>
+
+        <%- include('partials/footer') %>
+
+</body>
+
+</html>
