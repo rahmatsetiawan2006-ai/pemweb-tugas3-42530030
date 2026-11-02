@@ -28,19 +28,18 @@ Aplikasi ini dikembangkan menggunakan Node.js, Express.js, EJS, dan MySQL. Websi
 
 1. Clone repository:
 
-```bash
-git clone (https://github.com/rahmatsetiawan2006-ai/pemweb-tugas3-42530030.git)
+*terminal*
+git clone https://github.com/rahmatsetiawan2006-ai/pemweb-tugas3-42530030.git
 
 
 2. Masuk ke folder proyek:
 
-```bash
+*terminal*
 cd kedai-senja
-```
 
 3. Instal dependencies:
 
-```bash
+*terminal*
 npm install
 ```
 
